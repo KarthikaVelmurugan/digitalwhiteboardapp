@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "847841010448",
+    "firebase_url": "https://white-board-cd3d9.firebaseio.com",
+    "project_id": "white-board-cd3d9",
+    "storage_bucket": "white-board-cd3d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847841010448:android:2e1fa4c7e24b7a41577b95",
+        "android_client_info": {
+          "package_name": "com.tailermade.whiteboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847841010448-0onkrdi59q5q068l64m4kpkqsv16q1ln.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tailermade.whiteboard",
+            "certificate_hash": "f17c3b7f059f0b39d3c0365afb741f013df3ed59"
+          }
+        },
+        {
+          "client_id": "847841010448-v2t418lcu1h36apc4ehiso2l1sbnt4l1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqmYCr84m-6F7bHvVX4Jz8U5vpuOrI_ds"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847841010448-v2t418lcu1h36apc4ehiso2l1sbnt4l1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
