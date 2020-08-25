@@ -1,8 +1,6 @@
 import 'dart:async';
-
-import 'package:whiteboard/whiteboard.dart';
-import 'package:whiteboard/whiteboardkit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:whiteboard/homescreen.dart';
 import 'package:whiteboard/login.dart';
@@ -21,8 +19,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    WidgetsFlutterBinding.ensureInitialized();
-
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp
+    ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'White Board Class Room',

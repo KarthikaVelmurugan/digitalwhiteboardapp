@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:whiteboard/animation_delay.dart';
 import 'package:whiteboard/checkingnet.dart';
 import 'package:whiteboard/fluttertoast.dart';
@@ -16,7 +17,7 @@ class Login extends StatefulWidget {
 
 class _Login extends State<Login> with SingleTickerProviderStateMixin {
   final int delayedAmount = 500;
-  double _scale;
+
   AnimationController _controller;
   //getgooglesignin
   getSignIn() async {
@@ -61,12 +62,16 @@ class _Login extends State<Login> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     checkingnet(context);
-    _scale = 1 - _controller.value;
 
     MediaQueryData queryData = MediaQuery.of(context);
     double ht = queryData.size.height;
     double wt = queryData.size.width;
-
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp
+    ]);
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         color: Colors.white,
@@ -74,7 +79,8 @@ class _Login extends State<Login> with SingleTickerProviderStateMixin {
         home: WillPopScope(
             onWillPop: _onBackPressed,
             child: Scaffold(
-              body: Container(
+                body: SingleChildScrollView(
+              child: Container(
                 height: ht,
                 width: wt,
                 decoration: new BoxDecoration(
@@ -138,7 +144,7 @@ class _Login extends State<Login> with SingleTickerProviderStateMixin {
                   ],
                 ),
               ),
-            )));
+            ))));
   }
 
   Future<bool> _onBackPressed() {

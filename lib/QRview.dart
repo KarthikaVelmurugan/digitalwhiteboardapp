@@ -7,7 +7,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:whiteboard/shared.dart';
 import 'package:whiteboard/whiteboard.dart';
-import 'package:whiteboard/whiteboardkit.dart';
 
 const flashOn = 'FLASH ON';
 const flashOff = 'FLASH OFF';
@@ -278,7 +277,7 @@ class _QRViewExampleState extends State<QRViewExample> {
         Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => DemoWhiteboard(
+              builder: (context) => Whiteboardmodel(
                 qrtext: qrText,
               ),
             ));
