@@ -17,13 +17,21 @@ import 'package:whiteboard/signin.dart';
 
 import 'widgets/custom_shape.dart';
 import 'widgets/responsive_ui.dart';
-import 'widgets/textformfield.dart';
+
 import 'package:http/http.dart' as http;
 
 class Register extends StatefulWidget {
   @override
   _Register createState() => _Register();
 }
+
+String sname = '';
+String mobno = '';
+String res = '';
+String profession;
+String state;
+String district;
+String college;
 
 class _Register extends State<Register> with SingleTickerProviderStateMixin {
   String errD = '';
@@ -37,13 +45,13 @@ class _Register extends State<Register> with SingleTickerProviderStateMixin {
   bool _validatei = false;
   bool _validatem = false;
   bool _professionvalidate = false;
-  String professionValue, state, district;
+  String professionValue;
   FocusNode namefocusnode,
       mobilefocusnode,
       collegefocusnode,
       statefocusnode,
       districtfocusnode;
-  String sname, mobno, profession, college;
+  //String profession, college;
   final String url = "https://api.savemynation.com/api/v1/savemynation/state";
   final String durl =
       "https://api.savemynation.com/api/v1/savemynation/district";
@@ -846,6 +854,8 @@ class _Register extends State<Register> with SingleTickerProviderStateMixin {
       onPressed: () async {
         setState(() {
           if (_page == 1) {
+            //do unit testing for form 1
+
             var f = 0;
             _validaten = false;
             _validatem = false;
@@ -863,6 +873,7 @@ class _Register extends State<Register> with SingleTickerProviderStateMixin {
             }
             if (professionValue == null) {
               _professionvalidate = true;
+
               f = 1;
             }
             if (f == 0) {
@@ -958,4 +969,46 @@ class _Register extends State<Register> with SingleTickerProviderStateMixin {
       whiteprefs.setString('district', district);
     });
   }
+}
+
+String donametest() {
+  if (sname.length < 4 || sname == '') {
+    return "Invalid username";
+  } else
+    return "valid username : $sname";
+}
+
+String domobtest() {
+  if (mobno.length == 10 && mobno != '')
+    return "valid mobileno : $mobno";
+  else
+    return "Invalid Mobile number";
+}
+
+String doprotest() {
+  if (profession == null)
+    return "Invalid Profession";
+  else
+    return "Valid Profession : $profession";
+}
+
+String docollegetest() {
+  if (college == null)
+    return "Invalid College";
+  else
+    return "Valid College : $college";
+}
+
+String dostatetest() {
+  if (state == null)
+    return "Invalid state";
+  else
+    return "Valid state : $state";
+}
+
+String dodistest() {
+  if (district == null)
+    return "Invalid district";
+  else
+    return "Valid state : $district";
 }
